@@ -10,6 +10,8 @@ size_t ft_strlen(char *str);
 ssize_t ft_write(int fildes, const void *buf, size_t nbyte);
 int ft_strcmp(const char *s1, const char *s2);
 char *ft_strcpy(const char *s1, const char *s2);
+ssize_t ft_read(int fildes, void *buf, size_t nbyte); //need to be fixed
+char *ft_strdup(const char *s);
 
 int main()
 {
@@ -85,25 +87,25 @@ int main()
     // printf("mine = %s|\n", ft_strcpy(dest, "hello"));
     // printf("origin = %s|\n", strcpy(dest, "hello"));
     // // ============ FT_STRDUP =================
-    // printf("mine == |%s|\n", ft_strdup("Hello"));
-    // printf("orig == |%s|\n", strdup("Hello"));
-    // printf("mine == |%s|\n", ft_strdup(""));
-    // printf("orig == |%s|\n", strdup(""));
-    // printf("|M| ==> string by ft_strdup is |%s|\n", ft_strdup("NULL"));
-    // printf("|O| ==> string by    strdup is |%s|\n", strdup("NULL"));
+    printf("mine == |%s|\n", ft_strdup("Hello"));
+    printf("orig == |%s|\n", strdup("Hello"));
+    printf("mine == |%s|\n", ft_strdup(""));
+    printf("orig == |%s|\n", strdup(""));
+    printf("|M| ==> string by ft_strdup is |%s|\n", ft_strdup("NULL"));
+    printf("|O| ==> string by    strdup is |%s|\n", strdup("NULL"));
     // == == == == == == FT_STRCMP == == == == == == == == = working fine
     // printf("mine == %d\n", ft_strcmp(str1, str2));
     // printf("orig == %d\n", strcmp(str1, str2));
     // printf("mine == %d\n", ft_strcmp(str2, str1));
     // printf("orig == %d\n", strcmp(str2, str1));
-    // // ============ FT_READ   =================
-    printf("mine == %d | %s\n", (int)ft_read(1, str, 5), str);
-    printf("orig == %d | %s\n", (int)read(1, str, 5), str);
-    printf("mine == %d | %s\n", (int)ft_read(-1, str, 5), str);
-    printf("orig == %d | %s\n", (int)read(-1, str, 5), str);
-    printf("mine == %d | %s\n", (int)ft_read(42, str, 5), str);
-    printf("orig == %d | %s\n", (int)read(42, str, 5), str);
-    fd1 = open("test1", O_RDONLY);
+    // // ============ FT_READ   ================= not working
+    // printf("mine == %d | %s\n", (int)ft_read(1, str, 5), str);
+    // printf("orig == %d | %s\n", (int)read(1, str, 5), str);
+    // // printf("mine == %d | %s\n", (int)ft_read(-1, str, 5), str);
+    // // printf("orig == %d | %s\n", (int)read(-1, str, 5), str);
+    // // printf("mine == %d | %s\n", (int)ft_read(42, str, 5), str);
+    // // printf("orig == %d | %s\n", (int)read(42, str, 5), str);
+    // fd1 = open("test1", O_RDONLY);
     // n = ft_read(fd1, s, 5);
     // printf("\n|M| ==> the return value of ft_read is |%zd| and s=|%s| and str_ernor = |%s|\n", n, s, strerror(errno));
     // printf("errno = |%d|\n", errno);
