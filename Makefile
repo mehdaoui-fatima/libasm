@@ -6,17 +6,17 @@
 #    By: fmehdaou <fmehdaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/24 09:24:43 by fmehdaou          #+#    #+#              #
-#    Updated: 2021/02/25 19:11:30 by fmehdaou         ###   ########.fr        #
+#    Updated: 2021/02/26 11:13:01 by fmehdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libasm.a
 
-SRCS =  ft_strlen.s\
-		ft_write.s \
-		ft_strcmp.s \
-		ft_read.s \
-		ft_strcpy.s \
+SRCS =  ft_strlen.s	\
+		ft_write.s	\
+		ft_strcmp.s	\
+		ft_read.s	\
+		ft_strcpy.s	\
 		ft_strdup.s
 	   
 OBJS =  $(SRCS:.s=.o)
@@ -32,9 +32,9 @@ $(NAME): $(OBJS)
 		 nasm $(CFLAGS) $<
 
 clean:
-	@/bin/rm -f *.o
+	/bin/rm -f *.o
 
 fclean:	clean 
-		@/bin/rm -f $(NAME)
+		/bin/rm -f $(NAME)
 
 re: 	fclean all

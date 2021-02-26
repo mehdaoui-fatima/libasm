@@ -1,5 +1,5 @@
 section	.text                             ; section where to put the code
-           global    _ft_strlen             ; to start the program
+           global    _ft_strlen           ; to start the program
 
 _ft_strlen:
            mov       rax,0
